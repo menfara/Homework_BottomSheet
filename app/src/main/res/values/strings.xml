@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homework_BottomSheet</string>
+    <string name="station_1">ChargePoint Station 1</string>
+    <string name="station_1_address">STREET PULO 25\nAmsterdam, Netherlands</string>
+    <string name="level_3">Level 3</string>
+    <string name="price">$0.2 per kwh</string>
+    <string name="cost">COST</string>
+    <string name="port_type">PORT TYPE</string>
+    <string name="open_in_google_maps">Open in Google Maps</string>
+</resources>

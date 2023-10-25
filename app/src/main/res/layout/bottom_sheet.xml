@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D91A132B"
+    android:paddingHorizontal="26dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="82dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="18dp"
+        android:backgroundTint="#7E65B0"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/station_image"
+        android:layout_width="wrap_content"
+        android:layout_height="94dp"
+        android:layout_marginTop="43dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/station_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/station_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:fontFamily="@font/outfit_regular"
+        android:text="@string/station_1"
+        android:textColor="#D9C8FF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/station_image"
+        app:layout_constraintTop_toTopOf="@+id/station_image" />
+
+    <TextView
+        android:id="@+id/stationAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/station_1_address"
+        android:textColor="#D9C8FF"
+        android:textSize="13.45sp"
+        app:layout_constraintStart_toStartOf="@+id/station_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/station_name_text_view" />
+
+    <TextView
+        android:id="@+id/portsInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="8 Ports Available"
+        android:textColor="#A680FA"
+        android:textSize="15.69sp"
+        app:layout_constraintStart_toStartOf="@+id/stationAddressTextView"
+        app:layout_constraintTop_toBottomOf="@+id/stationAddressTextView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/section_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/shape_border"
+        android:paddingHorizontal="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/portsInfoTextView"
+        tools:layout_editor_absoluteX="26dp">
+
+        <ImageView
+            android:id="@+id/ic_level"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="36dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_level"
+            app:layout_constraintBottom_toBottomOf="@id/textview_port_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/level_text_view" />
+
+        <TextView
+            android:id="@+id/level_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="@string/level_3"
+            android:textColor="#D9C8FF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/ic_level"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_port_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/port_type"
+            android:textColor="#D9C8FF"
+            app:layout_constraintStart_toStartOf="@id/level_text_view"
+            app:layout_constraintTop_toBottomOf="@id/level_text_view" />
+
+        <FrameLayout
+            android:id="@+id/line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#A0D9C8FF"
+            app:layout_constraintTop_toBottomOf="@id/textview_port_type" />
+
+
+        <ImageView
+            android:id="@+id/ic_price"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="36dp"
+            android:adjustViewBounds="true"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/ic_price"
+            app:layout_constraintBottom_toBottomOf="@id/price_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textview_price_2" />
+
+        <TextView
+            android:id="@+id/price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="@string/price"
+            android:textColor="#D9C8FF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/ic_price"
+            app:layout_constraintTop_toTopOf="@id/line_1" />
+
+        <TextView
+            android:id="@+id/textview_price_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/cost"
+            android:textColor="#D9C8FF"
+            app:layout_constraintStart_toStartOf="@id/price_text_view"
+            app:layout_constraintTop_toBottomOf="@id/price_text_view" />
+
+        <FrameLayout
+            android:id="@+id/line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#A0D9C8FF"
+            app:layout_constraintTop_toBottomOf="@id/textview_price_2" />
+
+        <ImageView
+            android:id="@+id/ic_power"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="36dp"
+            android:adjustViewBounds="true"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/ic_power"
+            app:layout_constraintBottom_toBottomOf="@id/power_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textview_power_2" />
+
+        <TextView
+            android:id="@+id/power_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="@string/price"
+            android:textColor="#D9C8FF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/ic_power"
+            app:layout_constraintTop_toTopOf="@id/line_2" />
+
+        <TextView
+            android:id="@+id/textview_power_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/cost"
+            android:textColor="#D9C8FF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/power_text_view"
+            app:layout_constraintTop_toBottomOf="@id/power_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#8E63EE"
+        android:fontFamily="@font/outfit_semibold"
+        android:paddingVertical="16dp"
+        android:text="@string/open_in_google_maps"
+        android:textColor="#2C1363"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/section_info"
+        app:layout_constraintVertical_bias="0"
+        app:shapeAppearanceOverlay="@style/CornerMaterialButton"
+        tools:layout_editor_absoluteX="26dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<!-- res/values/shape_appearances.xml -->
+<resources>
+
+    <style name="CornerMaterialButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">35dp</item>
+    </style>
+</resources>
