@@ -12,6 +12,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class MyBottomSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: BottomSheetBinding
+    private val data: ChargePoint? by lazy {
+        arguments?.getParcelable<ChargePoint>(ARG_DATA)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,24 +28,29 @@ class MyBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val data = arguments?.getParcelable<ChargePoint>(ARG_DATA)
+        setupUI()
+        configureBottomSheetBehavior()
+    }
 
-        if (data != null) {
+    private fun setupUI() {
+        data?.let {
             binding.apply {
-                stationImage.setImageResource(data.stationImageResId)
-                stationNameTextView.text = data.stationName
-                stationAddressTextView.text = data.address
-                portsInfoTextView.text = "${data.portsAvailable} Ports Available"
-                levelTextView.text = data.portType
-                priceTextView.text = data.cost
-                powerTextView.text = data.power
-            }
-            if (data.portsAvailable < 3) {
-                binding.portsInfoTextView.setTextColor(Color.parseColor("#F5CA31"))
+                stationImage.setImageResource(it.stationImageResId)
+                stationNameTextView.text = it.stationName
+                stationAddressTextView.text = it.address
+                portsInfoTextView.text = "${it.portsAvailable} Ports Available"
+                levelTextView.text = it.portType
+                priceTextView.text = it.cost
+                powerTextView.text = it.power
+
+                if (it.portsAvailable < 3) {
+                    portsInfoTextView.setTextColor(Color.parseColor("#F5CA31"))
+                }
             }
         }
+    }
 
-
+    private fun configureBottomSheetBehavior() {
         val behavior = BottomSheetBehavior.from(binding.root.parent as View)
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
@@ -51,12 +59,12 @@ class MyBottomSheetFragment : BottomSheetDialogFragment() {
         private const val ARG_DATA = "arg_data"
 
         fun newInstance(data: ChargePoint): MyBottomSheetFragment {
-            val args = Bundle()
-            args.putParcelable(ARG_DATA, data)
-            val fragment = MyBottomSheetFragment()
-            fragment.arguments = args
-            return fragment
+            val args = Bundle().apply {
+                putParcelable(ARG_DATA, data)
+            }
+            return MyBottomSheetFragment().apply {
+                arguments = args
+            }
         }
     }
-
 }
